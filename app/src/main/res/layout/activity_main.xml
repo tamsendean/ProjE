@@ -7,111 +7,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
+        android:layout_height="653dp"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/HighScore"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFEB3B"
-            android:text="High Score: 16" />
-
-        <TextView
-            android:id="@+id/Player1"
-            android:layout_width="wrap_content"
-            android:layout_height="71dp"
-            android:layout_weight="1"
-            android:background="#E41818"
-            android:text="Player 1: 3" />
-
-        <TextView
-            android:id="@+id/Player2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#2196F3"
-            android:text="Player 2: 2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom|right">
-
-        <view
-            android:id="@+id/SView"
-            class="edu.up.dbgui.Draw"
-            android:layout_width="317dp"
-            android:layout_height="659dp"
-            app:srcCompat="@drawable/db_board" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/ClockText"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:background="#FFEB3B"
-                android:gravity="center"
-                android:text="Clock:" />
-
-            <Button
-                android:id="@+id/ClockTimeCounter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".16"
-                android:background="#FFEB3B"
-                android:text="1:00" />
-
-            <Button
-                android:id="@+id/ConfirmButton"
-                android:layout_width="98dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".16"
-                android:background="#09FD13"
-                android:text="Confirm" />
-
-            <Button
-                android:id="@+id/MMbutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".16"
-                android:background="#D5D0D0"
-                android:text="Main Menu" />
-
-            <Button
-                android:id="@+id/RulesButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".16"
-                android:background="#D5D0D0"
-                android:text="Rules" />
-
-            <Button
-                android:id="@+id/QuitButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".16"
-                android:background="#D5D0D0"
-                android:text="Quit" />
-
-            <Button
-                android:id="@+id/RestartButton"
-                android:layout_width="match_parent"
-                android:layout_height="82dp"
-                android:layout_weight=".16"
-                android:background="#D5D0D0"
-                android:text="Restart" />
-        </LinearLayout>
-
-    </LinearLayout>
-
+        android:text="Run Test" />
 </LinearLayout>
