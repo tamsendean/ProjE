@@ -8,6 +8,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
                 text.setText(" ");
                 String testTxt = " ";
 
-                GameState firstInstance = new GameState();
-                GameState firstCopy = new GameState(firstInstance);
+                DBGameState firstInstance = new DBGameState();
+                DBGameState firstCopy = new DBGameState(firstInstance);
 
                 firstInstance.drawLine();
                 firstInstance.mainMenu();
@@ -32,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 firstInstance.restart();
                 firstInstance.quit();
 
-                GameState secondInstance = new GameState();
-                GameState secondCopy = new GameState(secondInstance);
+                DBGameState secondInstance = new DBGameState();
+                DBGameState secondCopy = new DBGameState(secondInstance);
 
                 testTxt += firstCopy.toString();
                 testTxt += secondCopy.toString();
@@ -48,4 +50,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+   /** public GameConfig createDefaultConfig() {
+        ArrayList<GamePlayerType> playerTypes = new ArrayList<>();
+        playerTypes.add(new GamePlayerType("Local Human Player") {
+            public GamePlayer createPlayer(String name) {
+                return new EKHumanPlayer1(name, R.layout.activity_main);
+            }
+        });
+        playerTypes.add(new GamePlayerType("Dumb Computer Player") {
+            public GamePlayer createPlayer(String name) {
+                return new EKComputerPlayer1(name);
+            }
+        });
+        playerTypes.add(new GamePlayerType("Smart Computer Player") {
+            public GamePlayer createPlayer(String name) {
+                return new EKComputerPlayer2(name);
+            }
+        });
+        GameConfig defaultConfig = new GameConfig(playerTypes, 4, 4, "Exploding Kittens", PORT_NUMBER);
+        defaultConfig.addPlayer("Human", 0);
+        defaultConfig.addPlayer("Computer", 1);
+        defaultConfig.setRemoteData("Remote Player", "", 0);
+        return defaultConfig;
+    }
+    */
 }
