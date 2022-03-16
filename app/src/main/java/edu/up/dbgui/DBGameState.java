@@ -20,7 +20,7 @@ public class DBGameState {
     private int turn;
     public boolean[] playerStatus;
     public STATE gameState;
-    public static final int NUM_PLAYERS = 4;
+    public static final int NUM_PLAYERS = 2;
     public int playerTurn;
     STATE state;
 
@@ -30,7 +30,6 @@ public class DBGameState {
 
     public DBGameState() {
         state = STATE.INIT_ARRAYS;
-
     }
     /**
         constructor for your class that initializes all the variables to reflect the start
@@ -63,11 +62,10 @@ public class DBGameState {
     }
 
 
-
     /**
-     * computes the integer number of the next player in a turn sequence (loops around through NUM PLAYERS -Written By Alex
-     * @param currentPlayer - current player index whose turn it is, should only pass through playerTurn int in EKState
-     * @return - returns true if a next player was found and set, false if the EKState realized the game is over
+     * computes the integer number of the next player in a turn sequence
+     * @param currentPlayer - current player index whose turn it is
+     * @return - returns true if a next player was found and set, false if game is over
      */
     public boolean nextPlayer(int currentPlayer) {
 
@@ -95,17 +93,13 @@ public class DBGameState {
     */
     @Override
     public String toString() {
-        return "{scores=" + Arrays.toString(scores) +
-                ", turn=" + turn +
-                '}';
+        return "Scores = " + Arrays.toString(scores) +
+                ", Turn = " + turn + ", Game Ready = " + prepareGame() +
+                ", Line Drawn = " + drawLine();
     }
 
     /**
-     * PrepareGame: calls createCards(), and then shuffles the draw pile. Iterates through the 4 player hands in
-     * deck, and adds the first 6 cards into a player hand iff it isnt an exploding kitten using move()
-     * and finally sets the gameState to GAME_SETUP - written by alex
-     * @return - true if it executed properly, false if gameState is not init_objects, probably
-     *           because function was called in incorrect order
+     * @return - true if it executed properly, false if gameState is not init_objects
      */
     public boolean prepareGame() {
             gameState = STATE.GAME_SETUP;
