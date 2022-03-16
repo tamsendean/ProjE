@@ -1,11 +1,9 @@
 package edu.up.dbgui;
 
-public class STATE {
+public enum STATE {
+        GAME_SETUP,
         INIT_ARRAYS,
         INIT_OBJECTS,
-        GAME_SETUP,
         MAIN_PLAY,
         GAME_END
-
-
 }

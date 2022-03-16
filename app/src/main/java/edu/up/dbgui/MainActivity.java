@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 DBGameState firstInstance = new DBGameState();
                 DBGameState firstCopy = new DBGameState(firstInstance);
 
-                firstInstance.drawLine(true);
+                firstInstance.drawLine();
                 firstInstance.mainMenu();
                 firstInstance.rules();
                 firstInstance.restart();

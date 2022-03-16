@@ -1,5 +1,5 @@
 /*
-    author tags here:
+    author tacopy here:
     ______
  */
 package edu.up.dbgui;
@@ -12,47 +12,32 @@ import java.util.Collections;
 
 public class DBGameState {
     private int[] scores = new int[1];
-    private int whosTurn;
+    private int turn;
     public boolean[] playerStatus;
     public STATE gameState;
     public static final int NUM_PLAYERS = 4;
     public int playerTurn;
-    CurrentState state;
-    ArrayList<HumanPlayer> player;
+    STATE state;
 
     /** default game setup
      * $param player current players added to the game setup
      */
 
-    public DBGameState(ArrayList<HumanPlayer> players) {
-        this.players = players;
-        this.maxPlayers = players.size();
-        state = CurrentState.INIT_ARRAYS;
+    public DBGameState() {
+        state = STATE.INIT_ARRAYS;
 
     }
     /**
         constructor for your class that initializes all the variables to reflect the start
         of the game before any actions have been taken.
      */
-    public DBGameState(){
+    public DBGameState(DBGameState copy){
         //scores start from 0 for all players
         for(int i = 0; i < scores.length; i++){
             scores[i] = 0;
         }
         //player 0 always starts
-        this.whosTurn = 0;
-    }
-
-   /*
-   copy constructor that makes a deep copy of a given instance of your
-    class and adjusts it so it shows only the data visible to a specific player.
-    */
-    public DBGameState(DBGameState gs){
-        //sets scores of the current game to this copy
-        for(int i = 0; i < scores.length; i++){
-            scores[i] = gs.scores[i];
-        }
-        this.whosTurn = gs.whosTurn;
+        this.turn = 0;
     }
 
     public boolean drawLine(){
@@ -78,7 +63,7 @@ public class DBGameState {
     else{
         this.playerTurn = state.playerTurn;
     }
-        this.gameState = state.gameState;
+        this.DBGameState = state.gameState;
         this.lastMessage = state.lastMessage;
         this.playerStatus = new boolean[state.playerStatus.length];
         for (int i = 0; i < state.playerStatus.length; i++) {
@@ -126,7 +111,7 @@ public class DBGameState {
     @Override
     public String toString() {
         return "{scores=" + Arrays.toString(scores) +
-                ", whosTurn=" + whosTurn +
+                ", turn=" + turn +
                 '}';
     }
 
