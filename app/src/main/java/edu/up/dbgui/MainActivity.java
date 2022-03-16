@@ -21,13 +21,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText text = findViewById(R.id.editText);
                 text.setText(" ");
+                String testTxt = " ";
 
                 GameState firstInstance = new GameState();
                 GameState firstCopy = new GameState(firstInstance);
 
+                firstInstance.drawLine();
+                firstInstance.mainMenu();
+                firstInstance.rules();
+                firstInstance.restart();
+                firstInstance.quit();
+
                 GameState secondInstance = new GameState();
                 GameState secondCopy = new GameState(secondInstance);
-                
+
+                testTxt += firstCopy.toString();
+                testTxt += secondCopy.toString();
+
+                if (firstCopy.toString().equals(secondCopy.toString())) {
+                    testTxt = "\n Copies are equal";
+                } else {
+                    testTxt = "\n Copies are not equal";
+                }
+                text.setText(testTxt);
+
             }
         });
     }
