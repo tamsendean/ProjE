@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText text = findViewById(R.id.editText);
                 text.setText(" ");
-                String testTxt = " ";
+                String testTxt = "";
 
                 DBGameState firstInstance = new DBGameState();
                 DBGameState firstCopy = new DBGameState(firstInstance);
 
-                firstInstance.drawLine();
+                firstInstance.drawLine(true);
                 firstInstance.mainMenu();
                 firstInstance.rules();
                 firstInstance.restart();
@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
                 DBGameState secondInstance = new DBGameState();
                 DBGameState secondCopy = new DBGameState(secondInstance);
 
-                testTxt += firstCopy.toString();
-                testTxt += secondCopy.toString();
+                testTxt += "Copy 1: " + firstCopy.toString() + "\n";
+                testTxt += "Copy 2: " + secondCopy.toString() + "\n";
 
                 if (firstCopy.toString().equals(secondCopy.toString())) {
-                    testTxt = "\n Copies are equal";
+                    testTxt += "\nCopies are equal! :)";
                 } else {
-                    testTxt = "\n Copies are not equal";
+                    testTxt += "\nCopies are not equal. :(";
                 }
                 text.setText(testTxt);
 
