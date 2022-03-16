@@ -1,3 +1,12 @@
+/**
+ * Draw class for Dots and Boxes
+ *
+ * @author Audrey Sauter
+ * @author Tamsen Dean
+ * @author Bryce Manley
+ * @author Bryan Soriano-Salinas
+ *
+ */
 package edu.up.dbgui;
 
 import android.content.Context;

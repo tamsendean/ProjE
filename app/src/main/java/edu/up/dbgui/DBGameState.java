@@ -2,8 +2,10 @@
 /**
  * Game State for Dots and Boxes
  *
- * Audrey Sauter
- * Tamsen Dean
+ * @author Audrey Sauter
+ * @author Tamsen Dean
+ * @author Bryce Manley
+ * @author Bryan Soriano-Salinas
  *
  */
 
