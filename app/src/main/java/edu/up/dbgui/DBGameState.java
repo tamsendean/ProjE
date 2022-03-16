@@ -17,7 +17,7 @@ public class DBGameState {
     public STATE gameState;
     public static final int NUM_PLAYERS = 4;
     public int playerTurn;
-    CurrenState state;
+    CurrentState state;
     ArrayList<HumanPlayer> player;
 
     /** default game setup
