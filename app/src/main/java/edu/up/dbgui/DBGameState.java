@@ -1,7 +1,12 @@
-/*
-    author tacopy here:
-    ______
+
+/**
+ * Game State for Dots and Boxes
+ *
+ * Audrey Sauter
+ * Tamsen Dean
+ *
  */
+
 package edu.up.dbgui;
 
 import android.util.Log;
@@ -57,19 +62,6 @@ public class DBGameState {
         return true;
     }
 
-    if(state == null){
-        return;
-    }
-    else{
-        this.playerTurn = state.playerTurn;
-    }
-        this.DBGameState = state.gameState;
-        this.lastMessage = state.lastMessage;
-        this.playerStatus = new boolean[state.playerStatus.length];
-        for (int i = 0; i < state.playerStatus.length; i++) {
-        playerStatus[i] = state.playerStatus[i];
-    }
-
 
 
     /**
@@ -81,27 +73,20 @@ public class DBGameState {
 
         int outCounter = 0;
         for(int i = 0; i < playerStatus.length; i++){
-            //Log.i("MSG", "Player + " + i + " " + playerStatus[i]);
             if(!playerStatus[i]){
                 outCounter++;
             }
         }
         if(outCounter == 3) {
-            lastMessage = "Player " + endGame(playerStatus) + " has won the game.";
             return false;
         }
         else{
             int next = (currentPlayer+1)%4;
             while(playerStatus[next] == false){
                 next = (next+1)%4;
-                Log.i("MSG", next + "\n");
             }
             this.playerTurn = next;
-            lastMessage = "";
-            Log.i("MSG"," "+ playerTurn + " " + playerStatus[playerTurn]);
-
             return true;
-
         }
     }
 

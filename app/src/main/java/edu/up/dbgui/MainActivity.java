@@ -1,3 +1,11 @@
+/**
+ * Main Activity for Dots and Boxes
+ *
+ * Audrey Sauter
+ * Tamsen Dean
+ *
+ */
+
 package edu.up.dbgui;
 
 import androidx.appcompat.app.AppCompatActivity;
